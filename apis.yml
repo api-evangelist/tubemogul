@@ -1,4 +1,16 @@
 aid: tubemogul
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tubemogul.png
 name: TubeMogul
 description: 'TubeMogul is a company surfaced as a portfolio company of trinity-ventures and added to
   the API Evangelist network as a stub for enrichment. Sector: marketing. This profile is a lead awaiting
@@ -16,9 +28,19 @@ modified: '2026-07-17'
 tags:
 - Company
 - Marketing
+x-acquired-by: adobe
+x-status: acquired
+x-note: 'tubemogul.com 301-redirects to advertising.adobe.com; TubeMogul was acquired
+  by Adobe (2016) and folded into Adobe Advertising Cloud. No independent API surface,
+  developer portal, or specification exists. Verified 2026-07-21.'
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
