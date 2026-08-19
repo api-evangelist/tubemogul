@@ -1,0 +1,92 @@
+generated: '2026-08-13'
+method: probed
+source: live probe of tubemogul.com, www.tubemogul.com and api.tubemogul.com
+note: >-
+  Every /.well-known/ path probed on every TubeMogul host missed. The apex and www hosts
+  301-redirect to Adobe (advertising.adobe.com / business.adobe.com) and answer 404 on every
+  discovery path; api.tubemogul.com resolves to api-lb.tubemogul.com but its load balancer
+  answers HTTP/1.0 503 "No server is available to handle this request" on every path, i.e. the
+  API tier has no backend. NO WellKnown, SecurityTxt, APICatalog or AgentCard pointer is emitted
+  from this file — this record documents an ABSENCE, not a served discovery surface.
+result: no-hits
+hosts:
+  - host: https://tubemogul.com
+    resolves: true
+    note: 301 to https://advertising.adobe.com/auth/login (Fastly edge, 151.101.x.49)
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+      - path: /openapi.json
+        status: 404
+      - path: /swagger.json
+        status: 404
+      - path: /api-docs
+        status: 404
+  - host: https://www.tubemogul.com
+    resolves: true
+    note: 301 to https://business.adobe.com/products/advertising/adobe-advertising-cloud.html
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+  - host: https://api.tubemogul.com
+    resolves: true
+    note: >-
+      CNAME api-lb.tubemogul.com -> 54.164.125.216 / 18.208.240.201. TLS terminates, but the
+      load balancer returns HTTP/1.0 503 with body "No server is available to handle this
+      request." on EVERY path — a HAProxy backend-less response. The historical TubeMogul Ad
+      Platform API host is dark.
+    documents:
+      - path: /
+        status: 503
+      - path: /openapi.json
+        status: 503
+      - path: /openapi.yaml
+        status: 503
+      - path: /swagger.json
+        status: 503
+      - path: /v1/openapi.json
+        status: 503
+      - path: /api-docs
+        status: 503
+      - path: /docs
+        status: 503
+      - path: /redoc
+        status: 503
+      - path: /graphql
+        status: 503
+      - path: /.well-known/security.txt
+        status: 503
+      - path: /.well-known/openid-configuration
+        status: 503
+      - path: /.well-known/oauth-authorization-server
+        status: 503
+      - path: /.well-known/api-catalog
+        status: 503
+      - path: /.well-known/ai-plugin.json
+        status: 503
+      - path: /.well-known/agent-card.json
+        status: 503
+      - path: /.well-known/agent.json
+        status: 503
+      - path: /llms.txt
+        status: 503

@@ -1,0 +1,47 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry search (0 results), pypi.org/pypi/tubemogul/json (404),
+  rubygems.org search, github.com/tubemogul (47 public repos)
+note: >-
+  NO first-party TubeMogul client library exists on any public registry. The company's own
+  GitHub org (github.com/tubemogul, since renamed "Adobe Advertising Cloud", last org update
+  2018-05-15) holds 47 repos that are forks of infrastructure and ad-tech tooling — Puppet
+  modules, video.js/videojs-contrib-ads, Druid, Debezium, Storm, Elasticsearch — plus a few
+  first-party Go/Java ops utilities (nscatools, nscapi, gangster, kafka-logsplitter, openvv,
+  webtester). None of them is an SDK for the TubeMogul Ad Platform API. The single client
+  library that exists is THIRD-PARTY and abandoned. No `SDKs` pointer is emitted, because
+  official: true was not established for any package.
+official_package_count: 0
+packages:
+  - language: ruby
+    registry: rubygems
+    name: tubemogul_api
+    url: https://rubygems.org/gems/tubemogul_api
+    install: gem install tubemogul_api
+    official: false
+    version: 0.2.0
+    published: '2018-11-05'
+    downloads: 4838
+    license: MIT
+    author: Guilherme Goettems Schneider
+    source_code: https://github.com/ad2games/tubemogul_api
+    homepage: https://www.combostrike.com
+    note: >-
+      Third-party Ruby client for the TubeMogul Ad Platform API, published by ad2games /
+      combostrike — NOT by TubeMogul. Last release 0.2.0 on 2018-11-05, two years after the
+      Adobe acquisition. The API host it targets (api.tubemogul.com) now returns 503 on every
+      path, so this gem has no reachable backend.
+registries_checked:
+  - registry: npm
+    query: tubemogul
+    result: 0 packages
+  - registry: pypi
+    query: tubemogul
+    result: 404 — no project
+  - registry: rubygems
+    query: tubemogul
+    result: 1 package (third-party)
+  - registry: github
+    query: github.com/tubemogul
+    result: 47 public repos, no first-party API SDK, org dormant since 2018
