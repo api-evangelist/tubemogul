@@ -46,7 +46,7 @@ tags:
 - Video Advertising
 - Demand-Side Platform
 - Programmatic Advertising
-- AdTech
+- Ad Tech
 - Acquired
 tags_raw:
 - Company
@@ -69,6 +69,11 @@ x-note: 'tubemogul.com 301-redirects to advertising.adobe.com/auth/login and
   Re-verified 2026-08-13.'
 apis: []
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/adobe/
+  name: Adobe
+  x-relationship: acquired
+  x-evidence: "Founded 2006 in Emeryville, California, it IPO'd on NASDAQ in 2014 and was acquired by Adobe in 2016, then folded into Adobe Advertising Cloud."
 - type: DomainSecurity
   url: security/tubemogul-domain-security.yml
 - type: Website
